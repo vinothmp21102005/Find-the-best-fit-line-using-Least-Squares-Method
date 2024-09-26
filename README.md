@@ -24,10 +24,17 @@ RegisterNumber:  212223240182
 
 import numpy as np
 import matplotlib.pyplot as plt
+
 X=np.array(eval(input()))
 Y=np.array(eval(input()))
+```
+![image](https://github.com/user-attachments/assets/c52ef4fa-1ad2-485e-9ccd-d0de7a41b650)
+
+```
 X_mean=np.mean(X)
 print(X_mean)
+
+
 Y_mean=np.mean(Y)
 print(Y_mean)
 num=0
@@ -37,10 +44,22 @@ for i in range(len(X)):
   denum+=(X[i]-X_mean)**2
 m=num/denum
 print(m)
+```
+![image](https://github.com/user-attachments/assets/ee697820-9bbf-403f-90ad-ce3d2a1af87b)
+
+```
 b=Y_mean - m*X_mean
 print(b)
+```
+![image](https://github.com/user-attachments/assets/b4a267bf-e296-4a9e-bd3e-91db9916df44)
+
+```
 Y_pred=m*X+b
 print(Y_pred)
+```
+![image](https://github.com/user-attachments/assets/981f93cb-4b57-443c-8531-e563efc15b98)
+
+```
 plt.scatter(X,Y,color='blue')
 plt.plot(X,Y_pred,color='yellow') 
 plt.show()
