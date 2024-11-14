@@ -23,55 +23,47 @@ Developed by: VINOTH M P
 RegisterNumber:  212223240182
 
 import numpy as np
-import matplotlib.pyplot as plt
+x=np.array(eval(input()))
+y=y=np.array(eval(input()))
+print("the input values are\nx:",x,"\ny:",y)
 
-X=np.array(eval(input()))
-Y=np.array(eval(input()))
-```
-![image](https://github.com/user-attachments/assets/c52ef4fa-1ad2-485e-9ccd-d0de7a41b650)
+xmean=np.mean(x)
+print("the mean value is:",xmean)
 
-```
-X_mean=np.mean(X)
-print(X_mean)
+ymean=np.mean(y)
+print(ymean)
 
-
-Y_mean=np.mean(Y)
-print(Y_mean)
 num=0
-denum=0
-for i in range(len(X)):
-  num+=(X[i]-X_mean)*(Y[i]-Y_mean)
-  denum+=(X[i]-X_mean)**2
-m=num/denum
-print(m)
-```
-![image](https://github.com/user-attachments/assets/ee697820-9bbf-403f-90ad-ce3d2a1af87b)
+denom=0
+for i in range(len(x)):
+    num+=(x[i]-xmean)*(y[i]-ymean)
+    denom+=(x[i]-xmean)**2
 
-```
-b=Y_mean - m*X_mean
-print(b)
-```
-![image](https://github.com/user-attachments/assets/b4a267bf-e296-4a9e-bd3e-91db9916df44)
+m=num/denom
+print("slop:",m)
 
-```
-Y_pred=m*X+b
-print(Y_pred)
-```
-![image](https://github.com/user-attachments/assets/981f93cb-4b57-443c-8531-e563efc15b98)
+b=ymean-m*xmean
+print("y_intercept:",b)
 
-```
-plt.scatter(X,Y,color='blue')
-plt.plot(X,Y_pred,color='yellow') 
+ypred=m*x+b
+print("y_predict:",ypred)
+
+import matplotlib.pyplot as plt
+plt.scatter(x,y)
+plt.plot(x,ypred,color='green')
 plt.show()
-
 ```
-
 ## Output:
 
+![image](https://github.com/user-attachments/assets/c52ef4fa-1ad2-485e-9ccd-d0de7a41b650)
+
+![image](https://github.com/user-attachments/assets/ee697820-9bbf-403f-90ad-ce3d2a1af87b)
+
+![image](https://github.com/user-attachments/assets/b4a267bf-e296-4a9e-bd3e-91db9916df44)
+
+![image](https://github.com/user-attachments/assets/981f93cb-4b57-443c-8531-e563efc15b98)
+
 ![image](https://github.com/user-attachments/assets/6a0978e4-ba04-4a6e-bde6-413b1b3f58d7)
-
-
-
 
 ## Result:
 Thus the univariate Linear Regression was implemented to fit a straight line using least squares using python programming.
